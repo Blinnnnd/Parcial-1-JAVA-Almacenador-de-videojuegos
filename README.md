@@ -2,6 +2,8 @@
 PARCIAL 1 PROFESORA NAVEDA
 Alumno: Luna Marcelo Joaquin
 
+[Le recomiendo abrir con intellij que para dar los ultimos retoques lo importe en el mismo :) ]
+
 Almacenador de Juegos Retro es una aplicación de consola desarrollada en Java que permite gestionar una base de datos de consolas y videojuegos clásicos. Utilizando JDBC con la base de datos H2 en modo archivo, la aplicación proporciona una interfaz sencilla para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre dos entidades principales:
 
 Consola: representa una consola de videojuegos retro (por ejemplo, Super Nintendo, Sega Genesis).
