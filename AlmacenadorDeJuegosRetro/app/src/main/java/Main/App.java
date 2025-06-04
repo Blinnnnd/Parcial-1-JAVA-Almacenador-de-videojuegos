@@ -48,7 +48,7 @@ public class App {
     private static void mostrarMenu() {
             System.out.println("""
             ╔════════════════════════════════════════════════╗
-            ║               << MENÚ PRINCIPAL >>             ║
+            ║              << MENÚ PRINCIPAL >>              ║
             ╠════════════════════════════════════════════════╣
             ║                    CONSOLAS                    ║
             ╠════════════════════════════════════════════════╣
@@ -58,7 +58,7 @@ public class App {
             ║ 4. Buscar consola por ID                       ║
             ║ 5. Actualizar consola                          ║
             ╠════════════════════════════════════════════════╣
-            ║                 VIDEOJUEGOS                    ║
+            ║               VIDEOJUEGOS                      ║
             ╠════════════════════════════════════════════════╣
             ║ 6. Agregar videojuego                          ║
             ║ 7. Listar videojuegos                          ║

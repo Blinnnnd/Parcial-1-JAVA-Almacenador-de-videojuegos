@@ -1,10 +1,20 @@
 package Util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ *
+ * Blinnnnd
+ *
+ */
 public class DBInicializador {
+
+    private static final Logger logger = LogManager.getLogger(DBInicializador.class);
 
     public static void crearTablas() {
         String sqlConsola = """
@@ -30,10 +40,10 @@ public class DBInicializador {
 
             stmt.execute(sqlConsola);
             stmt.execute(sqlVideoJuego);
-            System.out.println("✅ Tablas creadas o verificadas correctamente");
+            logger.info("✅ Tablas creadas o verificadas correctamente. Todo está funcionando correctamente ✅");
 
         } catch (SQLException e) {
-            System.err.println("❌ Error al crear las tablas: " + e.getMessage());
+            logger.error("❌ Error al crear las tablas ❌: {}", e.getMessage(), e);
         }
     }
 }

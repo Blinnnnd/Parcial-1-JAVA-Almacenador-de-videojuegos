@@ -1,29 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package dao.impl;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import Model.Consola;
 import Model.VideoJuego;
-import java.sql.Connection;
-import java.util.List;
 import Util.DBUtil;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import dao.VideoJuegoDAO;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Blinnnnd
- * 
  */
+public class VideoJuegoDAOimpl implements VideoJuegoDAO {
 
-public class VideoJuegoDAOimpl implements VideoJuegoDAO{
+    private static final Logger logger = LogManager.getLogger(VideoJuegoDAOimpl.class);
 
     @Override
     public void guardar(VideoJuego juego) {
@@ -37,15 +32,17 @@ public class VideoJuegoDAOimpl implements VideoJuegoDAO{
             stmt.setInt(3, juego.getConsola().getId());
 
             stmt.executeUpdate();
+            logger.info("Videojuego guardado: {}", juego.getNombre());
+
         } catch (SQLException e) {
-            System.out.println("Error al guardar videojuego: " + e.getMessage());
+            logger.error("Error al guardar videojuego", e);
         }
     }
 
     @Override
     public VideoJuego buscarPorId(int id) {
         String sql = "SELECT v.id, v.nombre, v.añodelanzamiento, c.id AS consola_id, c.titulo, c.fabricante " +
-                     "FROM videojuego v JOIN consola c ON v.consola_id = c.id WHERE v.id = ?";
+                "FROM videojuego v JOIN consola c ON v.consola_id = c.id WHERE v.id = ?";
 
         try (Connection conn = DBUtil.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -60,15 +57,18 @@ public class VideoJuegoDAOimpl implements VideoJuegoDAO{
                         rs.getString("fabricante")
                 );
 
-                return new VideoJuego(
+                VideoJuego juego = new VideoJuego(
                         rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getInt("añodelanzamiento"),
                         consola
                 );
+
+                logger.info("Videojuego encontrado: {}", juego.getNombre());
+                return juego;
             }
         } catch (SQLException e) {
-            System.out.println("Error al buscar videojuego: " + e.getMessage());
+            logger.error("Error al buscar videojuego", e);
         }
 
         return null;
@@ -78,7 +78,7 @@ public class VideoJuegoDAOimpl implements VideoJuegoDAO{
     public List<VideoJuego> listarTodos() {
         List<VideoJuego> lista = new ArrayList<>();
         String sql = "SELECT v.id, v.nombre, v.añodelanzamiento, c.id AS consola_id, c.titulo, c.fabricante " +
-                     "FROM videojuego v JOIN consola c ON v.consola_id = c.id";
+                "FROM videojuego v JOIN consola c ON v.consola_id = c.id";
 
         try (Connection conn = DBUtil.obtenerConexion();
              Statement stmt = conn.createStatement();
@@ -100,8 +100,9 @@ public class VideoJuegoDAOimpl implements VideoJuegoDAO{
 
                 lista.add(juego);
             }
+            logger.info("Se listaron {} videojuegos", lista.size());
         } catch (SQLException e) {
-            System.out.println("Error al listar videojuegos: " + e.getMessage());
+            logger.error("Error al listar videojuegos", e);
         }
 
         return lista;
@@ -120,10 +121,12 @@ public class VideoJuegoDAOimpl implements VideoJuegoDAO{
             stmt.setInt(4, juego.getId());
 
             stmt.executeUpdate();
+            logger.info("Videojuego actualizado: {}", juego.getNombre());
         } catch (SQLException e) {
-            System.out.println("Error al actualizar videojuego: " + e.getMessage());
+            logger.error("Error al actualizar videojuego", e);
         }
     }
+
 
     public void eliminar(int id) {
         String sql = "DELETE FROM videojuego WHERE id = ?";
@@ -133,13 +136,15 @@ public class VideoJuegoDAOimpl implements VideoJuegoDAO{
 
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            logger.info("Videojuego eliminado con ID: {}", id);
         } catch (SQLException e) {
-            System.out.println("Error al eliminar videojuego: " + e.getMessage());
+            logger.error("Error al eliminar videojuego", e);
         }
     }
 
     @Override
     public void eliminarPorID(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        eliminar(id); // Ya está implementado arriba
     }
 }
+

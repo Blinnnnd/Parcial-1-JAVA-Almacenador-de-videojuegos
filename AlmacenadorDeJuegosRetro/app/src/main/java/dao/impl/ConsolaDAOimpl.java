@@ -1,9 +1,12 @@
-
 package dao.impl;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import Model.Consola;
 import Util.DBUtil;
 import dao.ConsolaDAO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,13 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Implementación del DAO para la entidad Consola.
  *
  * @author Blinnnnd
- * 
  */
+public class ConsolaDAOimpl implements ConsolaDAO {
 
-public class ConsolaDAOimpl implements ConsolaDAO{
-    
+    private static final Logger logger = LogManager.getLogger(ConsolaDAOimpl.class);
+
     @Override
     public void guardar(Consola consola) {
         String sql = "INSERT INTO consola (titulo, fabricante) VALUES (?, ?)";
@@ -31,22 +35,26 @@ public class ConsolaDAOimpl implements ConsolaDAO{
             stmt.setString(2, consola.getFabricante());
 
             stmt.executeUpdate();
+            logger.info("Consola guardada: {} ({})", consola.getTitulo(), consola.getFabricante());
+
         } catch (SQLException e) {
-            System.out.println("Error al guardar consola: " + e.getMessage());
+            logger.error("Error al guardar consola", e);
         }
     }
 
     @Override
     public void eliminar(int id) {
-        String sql = "DELETE FROM Consola WHERE id = ?";
+        String sql = "DELETE FROM consola WHERE id = ?";
 
         try (Connection conn = DBUtil.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            logger.info("Consola con ID {} eliminada.", id);
+
         } catch (SQLException e) {
-            System.out.println("Error al eliminar consola: " + e.getMessage());
+            logger.error("Error al eliminar consola con ID " + id, e);
         }
     }
 
@@ -61,14 +69,18 @@ public class ConsolaDAOimpl implements ConsolaDAO{
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new Consola(
+                Consola c = new Consola(
                         rs.getInt("id"),
                         rs.getString("titulo"),
                         rs.getString("fabricante")
                 );
+                logger.info("Consola encontrada: {}", c.getTitulo());
+                return c;
+            } else {
+                logger.warn("No se encontró consola con ID {}", id);
             }
         } catch (SQLException e) {
-            System.out.println("Error al buscar consola: " + e.getMessage());
+            logger.error("Error al buscar consola con ID " + id, e);
         }
 
         return null;
@@ -90,8 +102,10 @@ public class ConsolaDAOimpl implements ConsolaDAO{
                         rs.getString("fabricante")
                 ));
             }
+            logger.info("Se listaron {} consolas.", consolas.size());
+
         } catch (SQLException e) {
-            System.out.println("Error al listar consolas: " + e.getMessage());
+            logger.error("Error al listar consolas", e);
         }
 
         return consolas;
@@ -109,8 +123,10 @@ public class ConsolaDAOimpl implements ConsolaDAO{
             stmt.setInt(3, consola.getId());
 
             stmt.executeUpdate();
+            logger.info("Consola actualizada: ID {}, Título: {}", consola.getId(), consola.getTitulo());
+
         } catch (SQLException e) {
-            System.out.println("Error al actualizar consola: " + e.getMessage());
+            logger.error("Error al actualizar consola con ID " + consola.getId(), e);
         }
     }
 }

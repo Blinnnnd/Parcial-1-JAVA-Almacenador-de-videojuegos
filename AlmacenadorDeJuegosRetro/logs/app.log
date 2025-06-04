@@ -1,0 +1,29 @@
+[2025-06-03 20:52:11] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 20:55:36] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 20:56:01] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 20:56:01] [INFO] ConsolaDAOimpl - Consola guardada: Nintendo Games (nintendo)
+[2025-06-03 20:56:25] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 20:57:50] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 20:58:02] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 20:58:02] [INFO] ConsolaDAOimpl - Se listaron 3 consolas.
+[2025-06-03 20:58:12] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 20:58:12] [INFO] ConsolaDAOimpl - Consola con ID 5 eliminada.
+[2025-06-03 21:01:15] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:01:33] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:01:33] [INFO] ConsolaDAOimpl - Se listaron 2 consolas.
+[2025-06-03 21:01:38] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:01:38] [INFO] ConsolaDAOimpl - Consola encontrada: PS 1
+[2025-06-03 21:01:38] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:01:38] [INFO] VideoJuegoDAOimpl - Videojuego guardado: Mario Kart
+[2025-06-03 21:04:52] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:04:52] [INFO] DBInicializador - ✅ Tablas creadas o verificadas correctamente. Todo está funcionando correctamente ✅
+[2025-06-03 21:05:17] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:05:17] [INFO] VideoJuegoDAOimpl - Se listaron 5 videojuegos
+[2025-06-03 21:05:23] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:05:23] [INFO] VideoJuegoDAOimpl - Videojuego encontrado: Mario Kart
+[2025-06-03 21:05:36] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:05:36] [INFO] ConsolaDAOimpl - Se listaron 2 consolas.
+[2025-06-03 21:05:42] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:05:42] [INFO] ConsolaDAOimpl - Consola encontrada: PSP
+[2025-06-03 21:05:43] [INFO] DBUtil - Conexión a la base de datos establecida correctamente en C:\Users\ohcyd\OneDrive\Escritorio\Seg Semestre 2025\Java II Miercoles\Primer Parcial\Almacenador de Juegos Retro\AlmacenadorDeJuegosRetro\almacenVJ
+[2025-06-03 21:05:43] [INFO] VideoJuegoDAOimpl - Videojuego actualizado: Mario Kart
